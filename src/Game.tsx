@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import * as PIXI from "pixi.js";
 
+import Crow from "./assets/sprites/Crow.png"
+import Cat from "./assets/sprites/Cat.png"
+import Eagle from "./assets/sprites/Eagle.png"
+
 const Game: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
 
