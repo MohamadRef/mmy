@@ -265,19 +265,7 @@ export default function Game() {
             background: 'linear-gradient(to top, #7ed957 60%, transparent)',
             zIndex: 0
           }}
-        />
-
-        {/* Threshold line */}
-        <div style={{
-          position: 'absolute',
-          bottom: '250px',
-          left: 0,
-          right: 0,
-          height: '3px',
-          background: 'rgba(239, 68, 68, 0.6)',
-          boxShadow: '0 0 20px rgba(239, 68, 68, 0.8)',
-          zIndex: 1
-        }} />
+        /> 
 
         {/* Explosions */}
         {explosions.map(explosion => (
@@ -357,7 +345,7 @@ export default function Game() {
           onChange={handleInputChange}
           disabled={gameOver}
           autoFocus
-          placeholder="Type the random word under the enemy..."
+          placeholder="type the word "
           style={{
             width: '100%',
             padding: '15px 20px',
