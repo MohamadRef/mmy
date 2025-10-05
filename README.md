@@ -1,6 +1,6 @@
 # File: README.md
 
-# Nest Defense — Typing Defense
+# Nest Defense — Typing Defence
 
 Protect the nest. Type fast. Survive.
 
