@@ -243,7 +243,7 @@ export default function Game() {
               style={{
                 position: 'absolute',
                 bottom: '50px',
-                left: '-80%',
+                left: '-60%',
                 transform: 'translateX(-50%)',
                 zIndex: 20,
                 display: 'flex',
