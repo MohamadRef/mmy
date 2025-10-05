@@ -140,7 +140,7 @@ export default function App() {
               backgroundClip: "text",
             }}
           >
-            Epic Game
+            Nest Defence
           </h1>
 
           {/* Subtitle */}

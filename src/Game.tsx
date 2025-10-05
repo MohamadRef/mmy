@@ -124,10 +124,13 @@ export default function Game() {
   // Game loop
   useEffect(() => {
     if (gameOver) return;
-  gameLoopRef.current = setInterval(() => {
+    gameLoopRef.current = setInterval(() => {
       setEnemies(prev => {
         const updated = prev.map(e => ({ ...e, y: e.y + speed }));
-        const crossed = updated.filter(e => e.y > 100);
+        // Calculate threshold as a percentage of game area height
+        const thresholdPx = window.innerHeight - 250; // 250px from bottom
+        const thresholdPct = (thresholdPx / window.innerHeight) * 100;
+        const crossed = updated.filter(e => e.y > thresholdPct);
         if (crossed.length > 0) {
           setHearts(h => {
             const nh = h - crossed.length;
@@ -135,7 +138,7 @@ export default function Game() {
             return Math.max(0, nh);
           });
         }
-        return updated.filter(e => e.y <= 100);
+        return updated.filter(e => e.y <= thresholdPct);
       });
     }, 16);
     return () => {
@@ -233,21 +236,19 @@ export default function Game() {
           }}
         >
           <div ref={treeWrapRef} style={{ position: 'relative', width: TREE_WIDTH_CSS }}>
-            <img
-              src={TreeImg}
-              alt="Tree"
-              style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
-            />
+            
             <img
               src={FullNestImg}
               alt="Bird in Nest"
               style={{
                 position: 'absolute',
-                left: `${NEST_ANCHOR.leftPct}%`,
-                top: `${NEST_ANCHOR.topPct}%`,
-                width: `${NEST_ANCHOR.widthPct}%`,
-                height: 'auto',
-                transform: NEST_TRANSFORM,
+                bottom: '50px',
+                left: '-80%',
+                transform: 'translateX(-50%)',
+                zIndex: 20,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
               }}
             />
           </div>
