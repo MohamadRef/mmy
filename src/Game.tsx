@@ -197,7 +197,7 @@ export default function Game() {
     <div style={{
       position: 'fixed',
       inset: 0,
-      background: 'linear-gradient(135deg, #1e3a5f 0%, #7c2d12 50%, #c2410c 100%)',
+      background: 'linear-gradient(135deg, #56ccf2 0%, #87ceeb 60%, #fdf6b1 100%)',
       overflow: 'hidden'
     }}>
       {/* HUD */}
@@ -254,17 +254,18 @@ export default function Game() {
           </div>
         </div>
 
-        {/* Threshold line */}
-        <div style={{
-          position: 'absolute',
-          bottom: '250px',
-          left: 0,
-          right: 0,
-          height: '3px',
-          background: 'rgba(239, 68, 68, 0.6)',
-          boxShadow: '0 0 20px rgba(239, 68, 68, 0.8)',
-          zIndex: 1
-        }} />
+        {/* Green ground under threshold */}
+        <div
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            bottom: 0,
+            height: '250px',
+            background: 'linear-gradient(to top, #7ed957 60%, transparent)',
+            zIndex: 0
+          }}
+        /> 
 
         {/* Explosions */}
         {explosions.map(explosion => (
@@ -344,7 +345,7 @@ export default function Game() {
           onChange={handleInputChange}
           disabled={gameOver}
           autoFocus
-          placeholder="type the word"
+          placeholder="type the word "
           style={{
             width: '100%',
             padding: '15px 20px',
