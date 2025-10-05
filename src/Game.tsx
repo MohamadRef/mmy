@@ -132,6 +132,8 @@ export default function Game() {
         const thresholdPct = (thresholdPx / window.innerHeight) * 100;
         const crossed = updated.filter(e => e.y > thresholdPct);
         if (crossed.length > 0) {
+          // Clear current input when enemies cross the threshold so player can type next words
+          setCurrentInput('');
           setHearts(h => {
             const nh = h - crossed.length;
             if (nh <= 0) setGameOver(true);
