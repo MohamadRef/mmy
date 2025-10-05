@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Header from "./components/Header";
+import Footer from "./components/footer";
+
 
 const Game = () => (
   <div style={{
@@ -16,6 +19,7 @@ export default function App() {
   const [started, setStarted] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
 
+  
   return (
     <div style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh', overflow: 'hidden' }}>
       {!started ? (
@@ -29,6 +33,9 @@ export default function App() {
           overflow: 'hidden',
           background: 'linear-gradient(135deg, #1e1b4b 0%, #581c87 50%, #831843 100%)'
         }}>
+          <Header onStartGame={() => setStarted(true)} />
+
+          
           {/* Animated background blobs */}
           <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
             <div style={{
@@ -287,6 +294,7 @@ export default function App() {
           }
         }
       `}</style>
-    </div>
+      <Footer/>
+     </div>
   );
 }
