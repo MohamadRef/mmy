@@ -127,12 +127,10 @@ export default function Game() {
     gameLoopRef.current = setInterval(() => {
       setEnemies(prev => {
         const updated = prev.map(e => ({ ...e, y: e.y + speed }));
-        // Calculate threshold as a percentage of game area height
-        const thresholdPx = window.innerHeight - 250; // 250px from bottom
+        const thresholdPx = window.innerHeight - 250; 
         const thresholdPct = (thresholdPx / window.innerHeight) * 100;
         const crossed = updated.filter(e => e.y > thresholdPct);
         if (crossed.length > 0) {
-          // Clear current input when enemies cross the threshold so player can type next words
           setCurrentInput('');
           setHearts(h => {
             const nh = h - crossed.length;
