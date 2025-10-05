@@ -34,7 +34,7 @@ export default function Header({
             fontSize: "1.15rem",
           }}
         >
-          Epic Game
+          Nest Defence
         </h1>
       </div>
 

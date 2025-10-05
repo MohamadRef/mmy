@@ -17,7 +17,7 @@ export default function Footer() {
       }}
     >
       <p style={{ margin: 0, fontSize: "0.9rem" }}>
-        © 2025 Epic Game. All rights reserved.
+        © 2025 Nest Defence. All rights reserved.
       </p>
     </footer>
   );
